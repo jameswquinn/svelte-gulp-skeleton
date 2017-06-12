@@ -6,6 +6,7 @@ let buffer = require('vinyl-buffer');
 let gutil = require('gulp-util');
 let uglify = require('gulp-uglify');
 let sourcemaps = require('gulp-sourcemaps');
+let babel = require('gulp-babel');
 
 module.exports = () => {
 
@@ -23,8 +24,8 @@ module.exports = () => {
         .pipe(source('app.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
-            // Add transformation tasks to the pipeline here.
-        //.pipe(uglify()) todo: need a babel task before this i think
+        .pipe(babel({presets:['env']}))
+        .pipe(uglify()) 
         .on('error', gutil.log)
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./output/js/'));

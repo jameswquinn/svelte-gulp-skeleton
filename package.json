@@ -9,8 +9,10 @@
   "author": "michael shanks",
   "license": "MPL-2.0",
   "devDependencies": {
+    "babel-preset-env": "^1.5.2",
     "browserify": "^14.4.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
